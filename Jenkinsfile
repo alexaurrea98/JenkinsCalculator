@@ -40,7 +40,7 @@ pipeline {
         stage ('Package') {
             steps {
                 sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml compile install'
-                archiveArtifacts artifacts: 'src/**/*.java'
+                archiveArtifacts artifacts: '**/*.java'
                 archiveArtifacts artifacts: 'target/*.jar'
             }
         }
