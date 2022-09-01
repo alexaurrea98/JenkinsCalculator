@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml compile install'
                 archiveArtifacts artifacts: '**/*.java'
-                archiveArtifacts artifacts: 'target/*.jar'
+                archiveArtifacts artifacts: 'JenkinsCalculator/target/*.jar'
             }
         }
 
