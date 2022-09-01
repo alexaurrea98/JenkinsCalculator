@@ -16,8 +16,7 @@ pipeline {
     stages {
         stage ('Clean') {
             steps {
-
-                sh 'mvn clean'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml clean install'
 
             }
         }
