@@ -1,4 +1,4 @@
-from openjdk as build
+from openjdk
 
 COPY ./src/main/java/*.java /
 
