@@ -1,6 +1,6 @@
 from openjdk:8
 
-COPY ../src/main/java/*.java /
+COPY /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/src/main/java/*.java /
 
 RUN javac /Calculator.java
 
