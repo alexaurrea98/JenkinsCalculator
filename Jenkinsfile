@@ -14,7 +14,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml compile install'
             }
         }
 
