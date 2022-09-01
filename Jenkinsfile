@@ -31,6 +31,7 @@ pipeline {
             }
             post {
                 success {
+                    junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
                     junit 'target/surefire-reports/**/*.xml'
                 }
             }
@@ -38,7 +39,7 @@ pipeline {
 
         stage ('Package') {
             steps {
-                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml package install'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml compile install'
                 archiveArtifacts artifacts: 'src/**/*.java'
                 archiveArtifacts artifacts: 'target/*.jar'
             }
