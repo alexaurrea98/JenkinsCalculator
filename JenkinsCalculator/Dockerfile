@@ -1,4 +1,4 @@
-from openjdk
+from openjdk:8
 
 COPY ./src/main/java/*.java ./
 
