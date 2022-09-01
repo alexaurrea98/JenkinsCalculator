@@ -32,7 +32,7 @@ pipeline {
             post {
                 success {
                     junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
-                    junit 'target/surefire-reports/**/*.xml'
+
                 }
             }
         }
