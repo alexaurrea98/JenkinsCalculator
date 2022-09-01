@@ -56,7 +56,7 @@ pipeline {
         stage ('Building image') {
                     steps {
                         script {
-                            sh 'docker build -t /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/Dockerfile .'
+                            sh 'docker build -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/Dockerfile .'
                             dockerImage = docker.build registry + ":$BUILD_NUMBER"
                         }
                     }
