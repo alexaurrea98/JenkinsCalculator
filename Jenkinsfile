@@ -26,7 +26,8 @@ pipeline {
 
         stage ('Long Tests') {
             steps {
-                sh 'mvn -Dtest=CalculatorTestThorough test'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml -Dtest=CalculatorTestThorough test install'
+
             }
             post {
                 success {
@@ -37,7 +38,7 @@ pipeline {
 
         stage ('Package') {
             steps {
-                sh 'mvn package'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml package install'
                 archiveArtifacts artifacts: 'src/**/*.java'
                 archiveArtifacts artifacts: 'target/*.jar'
             }
