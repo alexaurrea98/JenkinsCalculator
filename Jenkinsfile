@@ -20,7 +20,7 @@ pipeline {
 
         stage ('Short Tests') {
             steps {
-                sh 'mvn -Dtest=CalculatorTest test'
+                sh 'mvn -f /var/lib/jenkins/workspace/CalculatorPipe/JenkinsCalculator/pom.xml -Dtest=CalculatorTest test install'
             }
         }
 
